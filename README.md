@@ -1,13 +1,13 @@
 # gulp-sequenced-shell-tasks
 Snippet to call shell tasks with gulp in order
 
-# Why?
+## Why?
 This is something me and everybody here at my company have been looking for for a long time.
 And that is the ability to call a shell task from gulp and being able to wait for it to end before continuing with the script.
 I understand that very idea of Gulp is run multiple task at the same time concurrently.
 But sometimes, like in my case, with Django's collectstatic command, I simply had to wait for it to end before calling on for images to be compressed by gulp-imagemin.
 
-# The Code
+## The Code
 Very simple only uses Node's core child_process to call on shell task and listen for it to end.
 ```javascript
 function sequencedShellTasks(list) {
@@ -38,7 +38,7 @@ function sequencedShellTasks(list) {
 ```
 What everything does is explained in the gulpfile!
 
-# How to use it?
+## How to use it?
 Easy! Just copy the code above put it in your gulpfile.
 Make a list of Shell commands you want to do.
 And call it like so `sequencedShellTasks(list, callback, 0)`.
@@ -58,12 +58,12 @@ gulp.task('commit', function() {
 });
 ```
 
-# Liked it? Star it!
+## Liked it? Star it!
 
-# TO-DO
+## TO-DO
 - Use default parameters for index and callback
 - Make it a gulp package
 
-# License
+## License
 MIT
 Feel free to modify it and use it if you like it :)
