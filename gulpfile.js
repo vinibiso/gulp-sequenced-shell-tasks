@@ -9,7 +9,6 @@ var spawn = require('child_process').spawn;
 // Accepts a callback as a second argument
 // And and index which is used only to call next command
 function sequencedShellTasks(list, callback, index) {
-  console.log(index);
   // Check to call callback when sequence ended
   if (index >= list.length) {
     if (callback !== undefined || callback !== null) {

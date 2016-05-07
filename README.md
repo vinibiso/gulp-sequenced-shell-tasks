@@ -60,6 +60,10 @@ gulp.task('commit', function() {
 
 # Liked it? Star it!
 
+# TO-DO
+- Use default parameters for index and callback
+- Make it a gulp package
+
 # License
 MIT
 Feel free to modify it and use it if you like it :)
