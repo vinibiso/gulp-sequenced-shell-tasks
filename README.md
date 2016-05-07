@@ -54,7 +54,7 @@ gulp.task('commit', function() {
   ];
   sequencedShellTasks(tasks, function () {
     console.log("DONE!");
-  });
+  }, 0);
 });
 ```
 
