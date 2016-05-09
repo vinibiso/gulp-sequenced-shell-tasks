@@ -9,9 +9,11 @@ var spawn = require('child_process').spawn;
 // Accepts a callback as a second argument
 // And and index which is used only to call next command
 function sequencedShellTasks(list, callback, index) {
+  callback = (callback === undefined)? null : callback;
+  index = (index === undefined)? 0 : index;
   // Check to call callback when sequence ended
   if (index >= list.length) {
-    if (callback !== undefined || callback !== null) {
+    if (callback !== null && callback !== undefined) {
       return callback();
     } else {
       return;
@@ -35,6 +37,16 @@ function sequencedShellTasks(list, callback, index) {
     sequencedShellTasks(list, callback, index+1);
   });
 }
+
+// Test Task to Add all files, comit and push
+gulp.task('test', function() {
+  var tasks = [
+    "echo 'a'",
+    "echo 'b'",
+    "echo 'c'"
+  ];
+  sequencedShellTasks(tasks);
+});
 
 // Test Task to Add all files, comit and push
 gulp.task('commit', function() {
