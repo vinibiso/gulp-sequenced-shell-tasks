@@ -45,7 +45,9 @@ gulp.task('test', function() {
     "echo 'b'",
     "echo 'c'"
   ];
-  sequencedShellTasks(tasks);
+  sequencedShellTasks(tasks, function () {
+    console.log("DONE!");
+  });
 });
 
 // Test Task to Add all files, comit and push
