@@ -10,9 +10,7 @@ But sometimes, like in my case, with Django's collectstatic command, I simply ha
 ## The Code
 Very simple only uses Node's core child_process to call on shell task and listen for it to end.
 ```javascript
-function sequencedShellTasks(list) {
-  var callback = (arguments[1] !== undefined ? arguments[1] : null);
-  var index = (arguments[2] !== 0 ? arguments[2] : 0);
+function sequencedShellTasks(list, callback, index) {
   if (index >= list.length) {
     if (callback !== undefined || callback !== null) {
       return callback();
