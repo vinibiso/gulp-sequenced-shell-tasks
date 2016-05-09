@@ -35,4 +35,4 @@ function sequencedShellTasks(list, callback, index) {
 }
 
 // Exports Package
-exports.sequencedShellTasks = sequencedShellTasks
+module.exports = sequencedShellTasks;
