@@ -16,10 +16,7 @@
   "engines": {
     "node": ">= 4.0.0"
   },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "yargs": "^4.7.0"
-  },
+  "devDependencies": {},
   "author": "Vinicius Bisognin Immich <vinibiso@gmail.com>",
   "license": "MIT"
 }
