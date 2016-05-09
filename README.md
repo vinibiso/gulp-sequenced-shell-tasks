@@ -3,11 +3,12 @@ Call shell tasks with gulp in order
 
 ## Installation
 Install through NPM and save it on your devDependencies with:
+
 `npm install --save-dev gulp-sequenced-shell-tasks`
 
 ## How to use it?
 ```javascript
-var sequencedShellTasks = require('gulp-sequenced-shell-tasks').sequencedShellTasks
+var sequencedShellTasks = require('gulp-sequenced-shell-tasks')
 
 gulp.task('commit', function() {
   var tasks = [
