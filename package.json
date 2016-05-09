@@ -1,12 +1,18 @@
 {
   "name": "gulp-sequenced-shell-tasks",
   "version": "1.0.0",
-  "description": "Snippet to call shell tasks with gulp in order",
-  "main": "gulpfile.js",
+  "description": "Call shell tasks in sequence with callbacks",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/vinibiso/gulp-sequenced-shell-tasks.git"
   },
+  "keywords": [
+    "shell",
+    "sequenced",
+    "order",
+    "shell callback"
+  ],
   "engines": {
     "node": ">= 4.0.0"
   },
@@ -14,5 +20,6 @@
     "gulp": "^3.9.1",
     "yargs": "^4.7.0"
   },
+  "author": "Vinicius Bisognin Immich <vinibiso@gmail.com>",
   "license": "MIT"
 }

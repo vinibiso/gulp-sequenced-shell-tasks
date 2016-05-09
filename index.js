@@ -1,8 +1,4 @@
-var gulp = require('gulp');
-// Only used for the example
-var argv = require('yargs').argv;
-// Use Node's Swpan from child_process
-// to call a on a shell task and listen when it closes
+// Require Swan from Node's defaul child_process package
 var spawn = require('child_process').spawn;
 
 // Calls Shell tasks in order based on list
@@ -38,25 +34,5 @@ function sequencedShellTasks(list, callback, index) {
   });
 }
 
-// Test Task to Add all files, comit and push
-gulp.task('test', function() {
-  var tasks = [
-    "echo 'a'",
-    "echo 'b'",
-    "echo 'c'"
-  ];
-  sequencedShellTasks(tasks);
-});
-
-// Test Task to Add all files, comit and push
-gulp.task('commit', function() {
-  var tasks = [
-    "git add .",
-    "git status",
-    "git commit -m '"+argv.m+"'",
-    "git push"
-  ];
-  sequencedShellTasks(tasks, function () {
-    console.log("DONE!");
-  }, 0);
-});
+// Exports Package
+exports.sequencedShellTasks = sequencedShellTasks
