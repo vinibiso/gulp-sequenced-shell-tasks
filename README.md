@@ -10,7 +10,7 @@ Install through NPM and save it on your devDependencies with:
 ```javascript
 var sequencedShellTasks = require('gulp-sequenced-shell-tasks')
 
-gulp.task('commit', function() {
+gulp.task('test', function() {
   var tasks = [
     "echo 'a'",
     "echo 'b'",
