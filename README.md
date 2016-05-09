@@ -10,11 +10,11 @@ But sometimes, like in my case, with Django's collectstatic command, I simply ha
 ## The Code
 Very simple only uses Node's core child_process to call on shell task and listen for it to end.
 ```javascript
-function sequencedShellTasks(list) {
-  var callback = (arguments[1] !== undefined ? arguments[1] : null);
-  var index = (arguments[2] !== 0 ? arguments[2] : 0);
+function sequencedShellTasks(list, callback, index) {
+  callback = (callback === undefined)? null : callback;
+  index = (index === undefined)? 0 : index;
   if (index >= list.length) {
-    if (callback !== undefined || callback !== null) {
+    if (callback !== null && callback !== undefined) {
       return callback();
     } else {
       return;
@@ -41,7 +41,7 @@ What everything does is explained in the gulpfile!
 ## How to use it?
 Easy! Just copy the code above put it in your gulpfile.
 Make a list of Shell commands you want to do.
-And call it like so `sequencedShellTasks(list, callback, 0)`.
+And call it like so `sequencedShellTasks(list)`.
 You can even pass callback function as second argument.
 Like the code bellow!
 ```javascript
@@ -54,7 +54,7 @@ gulp.task('commit', function() {
   ];
   sequencedShellTasks(tasks, function () {
     console.log("DONE!");
-  }, 0);
+  });
 });
 ```
 
